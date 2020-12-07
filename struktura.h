@@ -33,10 +33,21 @@ public:
 	const double& getMediana_() {
 		return mediana_;
 	}
-	inline string vardas() const { return vardas_; }   
-	inline string pavarde() const { return pavarde_; } 
-	double galBalas(int (*) (vector<int>) = mediana) const;  
-	istream& readStudent(std::istream&); 
+	void setVardas_(string v) {
+		vardas_ = v;
+	}
+	void setPavarde_(string p) {
+		pavarde_ = p;
+	}
+	void setEgzaminas_(int e) {
+		egzaminas_ = e;
+	}
+	void setPazymiai_(vector<int> nd) {
+		pazymiai_ = nd;
+	}
+	void setMediana_(double m) {
+		mediana_ = m;
+	}
 };
 
 struct vargsiukai {
