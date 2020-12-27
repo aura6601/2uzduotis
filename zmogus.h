@@ -5,7 +5,7 @@ class Zmogus
 public:
     Zmogus() {};
 
-    Zmogus(string v, string p);
+    Zmogus(std::string v, std::string p);
 
     Zmogus& operator=(const Zmogus& z) {
         vardas = z.vardas;
@@ -15,21 +15,21 @@ public:
 
     virtual ~Zmogus() = 0;
 
-    virtual const string& getVardas() = 0;
-    virtual const string& getPavarde() = 0;
+    virtual const std::string& getVardas() = 0;
+    virtual const std::string& getPavarde() = 0;
 
-    void setVardas(const string& v)
+    void setVardas(const std::string& v)
     {
         vardas = v;
     }
 
-    void setPavarde(const string& p)
+    void setPavarde(const std::string& p)
     {
         pavarde = p;
     }
 
 protected:
-    string vardas;
-    string pavarde;
+    std::string vardas;
+    std::string pavarde;
 };
 
