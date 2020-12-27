@@ -1,82 +1,27 @@
-#include "funkcijos.h"
-#include "struktura.h"
+#include "bibliotekos.h"
+#include "studentas.h"
 
 int main()
 {
-	string ats; 
-	do {
-		try {
-			cout << "Pasirinkite konteinerio tipa 'list' arba 'vector'" << endl;
-		    cin >> ats;
+	list<Studentas> sarasas = nuskaitymas_list();
 
-			if (ats != "list" && ats != "vector") {
-				throw runtime_error("Klaida! Reikia ivesti 'list' arba 'vector'");
-			}
-		}
-		catch (runtime_error& e) {
-			cout << e.what() << endl;
-			cout << "Jus ivedete: " << ats<< endl;
+	list<Studentas> vargsiukai;
+
+	auto start2 = chrono::high_resolution_clock::now();
+
+	for (Studentas& s : sarasas) {
+		if (s.getGalutinis() < 5) {
+			s.getVardas();
+			s.getPavarde();
+			s.getGalutinis();
+			vargsiukai.push_back(s);
 		}
 	}
-	while (ats != "list" && ats != "vector");
-	if (ats == "list")
-	{
-		auto start1 = chrono::high_resolution_clock::now();
+	sarasas.remove_if(tikrinimas);
 
-		list<studentas> sarasas = nuskaitymas_list();
+	auto finish2 = chrono::high_resolution_clock::now();
+	chrono::duration<double> skirtumas2 = finish2 - start2;
+	cout << "Studentu suskirstymas i dvi grupes uztruko: " << skirtumas2.count() << "s" << endl;
 
-		auto finish1 = chrono::high_resolution_clock::now();
-		chrono::duration<double> time1 = finish1 - start1;
-		cout << "Duomenu is failo nuskaitymas uztruko: " << time1.count() << "s" << endl;
-
-		auto start2 = chrono::high_resolution_clock::now();
-
-		list<vargsiukai> varg;
-
-		for (studentas& s : sarasas) {
-			if (s.galutinis < 5) {
-				varg.push_back(vargsiukai{ s.vardas, s.pavarde, s.galutinis });
-			}
-		}
-
-		sarasas.remove_if(tikrinimas);
-
-		auto finish2 = chrono::high_resolution_clock::now();
-		chrono::duration<double> time2 = finish2 - start2;
-		cout << "Studentu suskirstymas uztruko: " << time2.count() << "s" << endl;
-
-		sarasas.clear();
-
-	}
-	else if (ats == "vector")
-	{
-		auto start1 = chrono::high_resolution_clock::now();
-
-		vector<studentas> sarasas = nuskaitymas_vector();
-
-		auto finish1 = chrono::high_resolution_clock::now();
-		chrono::duration<double> time1 = finish1 - start1;
-		cout << "Duomenu is failo nuskaitymas uztruko: " << time1.count() << "s" << endl;
-
-		auto start2 = chrono::high_resolution_clock::now();
-
-		vector<vargsiukai> varg;
-
-		for (studentas& s : sarasas) {
-			if (s.galutinis < 5) {
-				varg.push_back(vargsiukai{ s.vardas, s.pavarde, s.galutinis });
-			}
-		}
-
-		sarasas.erase(remove_if(sarasas.begin(), sarasas.end(), tikrinimas), sarasas.end());
-
-		auto finish2 = chrono::high_resolution_clock::now();
-		chrono::duration<double> time2 = finish2 - start2;
-		cout << "Studentu suskirstymas uztruko: " << time2.count() << "s" << endl;
-
-		sarasas.clear();
-
-	}
-	else return 1;
-	}
-	
+	irasymas(vargsiukai);
+}

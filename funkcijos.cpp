@@ -1,17 +1,30 @@
-#include "funkcijos.h"
 #include "studentas.h"
 
-bool compareVardai(Studentas a, Studentas b) {
-    return a.getVardas() < b.getVardas();
+
+bool Studentas::compareVardai(const Studentas& a, const Studentas& b)
+{
+	return false;
 }
-bool comparePavardes(Studentas a, Studentas  b) {
-    return a.getPavarde() < b.getPavarde();
+
+bool Studentas::comparePavardes(const Studentas& a, const Studentas& b)
+{
+	return false;
 }
 
 Studentas::Studentas(string v, string p, vector<int> paz, int e, float g) : Zmogus(v, p) {
 	pazymiai = paz;
 	egzaminas = e;
 	galutinis = g;
+}
+
+bool compareVardai(Studentas& a, Studentas& b)
+{
+	return false;
+}
+
+bool comparePavardes(Studentas& a, Studentas& b)
+{
+	return false;
 }
 
 list<Studentas>nuskaitymas_list() {
@@ -93,5 +106,43 @@ bool tikrinimas(Studentas& eilute) {
 	return eilute.getGalutinis() < 5;
 }
 
+void irasymas(list<Studentas> sarasas) {
+	auto start = chrono::high_resolution_clock::now();
 
+	fstream f;
+
+	string pav;
+
+	do {
+		try {
+			cout << "Iveskite failo pavadinima: " << endl;
+			cin >> pav;
+			f.open(pav);
+
+			if (f.fail())
+			{
+				throw runtime_error("Failas tokiu pavadinimu neegzistuoja");
+			}
+		}
+		catch (runtime_error& e) {
+			cout << "Klaida! Failas nerastas." << endl;
+			cin.clear();
+			cin.ignore(10000, '\n');
+		}
+	} while (f.fail());
+
+	f << left << setw(30) << "Vardas" << setw(30) << "Pavarde" << setw(30) << "Galutinis" << endl;
+
+	for (Studentas& s : sarasas) {
+		f << left << setw(30) << s.getVardas() << setw(30) << s.getPavarde() << setw(30) << fixed << setprecision(2) << s.getGalutinis() << endl;
+	}
+
+	f.close();
+	sarasas.clear();
+
+	auto finish = chrono::high_resolution_clock::now();
+	chrono::duration<double> skirtumas = finish - start;
+
+	cout << "Failo irasymas truko: " << skirtumas.count() << "s" << endl;
+}
 
