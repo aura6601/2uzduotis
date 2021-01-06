@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.17)
+
+project(v.05)
+
+set(CMAKE_CXX_STANDARD 17)
+
+add_executable(v.05 v.05.cpp 
+zmogus.h zmogus.cpp 
+tudentas.h struktura.h
+irasymas.cpp palyginimas.cpp
+funkcijos.h  funkcijos.cpp
+bibliotekos.h)
