@@ -2,6 +2,7 @@
 # v2.0 versija 
 
 file:///C:/Users/Auguste/Desktop/v.05/v.05/html/index.html
+https://github.com/aura6601/2uzduotis/releases/tag/v2.0
 
 # v1.5 versija 
 https://github.com/aura6601/2uzduotis/releases/tag/v1.5
