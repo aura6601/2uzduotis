@@ -1,13 +1,9 @@
-@mainpage Objektinio progamavimo užduoties dokumentacija.
-
-@author Augustė Rakašiutė, Duomenų mokslas, 2 kursas, 1 grupė
-
 v2.0 
-Sukurta v1.5 projekto dokumentacija, naudojant Doxygen . Dokumentacija kurta v1.5 projektui. Kodas pakeistas tik papildomais komentarais, kuriuos suprastu doxygen.
+Sukurta v1.5 projekto dokumentacija, naudojant Doxygen . 
 
-Taip pat pakeistas README.md failas, kurio pagrindu kurtas dokumentacijos pagrindinis puslapis.
 
-file:///C:/Users/Auguste/Desktop/v.05/v.05/html/index.html
+
+file:///C:/Users/Auguste/Desktop/DOXY/html/md_v1_5__r_e_a_d_m_e.html
 
 # v1.5 versija 
 https://github.com/aura6601/2uzduotis/releases/tag/v1.5
