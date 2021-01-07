@@ -1,4 +1,7 @@
 #pragma once
+/**
+  * visos reikalingos bibliotekos 
+  */
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -15,3 +18,4 @@
 #include <sstream> 
 #include <chrono>
 #include <list>
+using namespace std; 

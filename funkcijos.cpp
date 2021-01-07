@@ -1,15 +1,28 @@
 #include "studentas.h"
 
 
+/**
+  * palyginami vardai
+  */
+
+
 bool Studentas::compareVardai(const Studentas& a, const Studentas& b)
 {
 	return false;
 }
 
+/**
+  * palyginamos pacardes
+  */
+
 bool Studentas::comparePavardes(const Studentas& a, const Studentas& b)
 {
 	return false;
 }
+
+/**
+ * Konstruktoriaus realizacija
+ */
 
 Studentas::Studentas(string v, string p, vector<int> paz, int e, float g) : Zmogus(v, p) {
 	pazymiai = paz;
@@ -27,14 +40,17 @@ bool comparePavardes(Studentas& a, Studentas& b)
 	return false;
 }
 
+/**
+  * failo nuskaitymas 
+  */
 list<Studentas>nuskaitymas_list() {
-    fstream failas;
+	fstream failas;
 
 	string n;
 
 	do {
 		try {
-			cout << "Iveskite failo pavadinima: " << endl;
+			cout << "Iveskite failo su duomenimis pavadinima: " << endl;
 			cin >> n;
 			failas.open(n);
 
@@ -102,9 +118,17 @@ list<Studentas>nuskaitymas_list() {
 	return grupe;
 }
 
+/**
+  * patikrinimas
+  */
+
 bool tikrinimas(Studentas& eilute) {
 	return eilute.getGalutinis() < 5;
 }
+
+/**
+  * vargsiuku irasymas i faila 
+  */
 
 void irasymas(list<Studentas> sarasas) {
 	auto start = chrono::high_resolution_clock::now();
@@ -115,7 +139,7 @@ void irasymas(list<Studentas> sarasas) {
 
 	do {
 		try {
-			cout << "Iveskite failo pavadinima: " << endl;
+			cout << "Iveskite failo i kuri irasysite vargsiukus pavadinima: " << endl;
 			cin >> pav;
 			f.open(pav);
 
@@ -140,9 +164,12 @@ void irasymas(list<Studentas> sarasas) {
 	f.close();
 	sarasas.clear();
 
+	/**
+  *  irasymo i faila laikas 
+  */
+
 	auto finish = chrono::high_resolution_clock::now();
 	chrono::duration<double> skirtumas = finish - start;
 
 	cout << "Failo irasymas truko: " << skirtumas.count() << "s" << endl;
 }
-
