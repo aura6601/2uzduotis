@@ -1,5 +1,11 @@
-# laboratorinis
-# v2.0 versija 
+@mainpage Objektinio progamavimo užduoties dokumentacija.
+
+@author Augustė Rakašiutė, Duomenų mokslas, 2 kursas, 1 grupė
+
+v2.0 
+Sukurta v1.5 projekto dokumentacija, naudojant Doxygen . Dokumentacija kurta v1.5 projektui. Kodas pakeistas tik papildomais komentarais, kuriuos suprastu doxygen.
+
+Taip pat pakeistas README.md failas, kurio pagrindu kurtas dokumentacijos pagrindinis puslapis.
 
 file:///C:/Users/Auguste/Desktop/v.05/v.05/html/index.html
 
