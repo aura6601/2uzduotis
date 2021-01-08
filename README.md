@@ -1,4 +1,9 @@
 # laboratorinis darbas
+v3.0 
+https://github.com/aura6601/2uzduotis/releases/tag/v3.0
+
+sukurtas programos diegimo failas 
+
 v.01
 Šioje versijoje yra realizuota programa, kuri leidžia vartotojui įvesti studento vardą ir pavardę, namų darbų pažymius ir egzamino įvertinimą. Baigus duomenų įvedimą programa apskaičiuoja studento galutinį balą, naudojant duotą formulę 0.4 * namų darbų vidurkis + 0.6 * egzaminas. 
 
