@@ -1,4 +1,8 @@
 # laboratorinis
+# v3.0 versija 
+sukurtas programos diegimo failas 
+https://github.com/aura6601/2uzduotis/releases/tag/v3.0
+
 # v2.0 versija 
 
 file:///C:/Users/Auguste/Desktop/v.05/v.05/html/index.html
